@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mealplan</title>
+</head>
+
+<body>
+    <h2> Meals Planned So Far</h2>
+    <ul>
+        <% menu.forEach((item)=> { %>
+            <p><a href="/menu/<%=item._id%>">Meal plan for:
+                <%=item.date%>
+                    </a>
+            </p>
+            <li>Completed: <%= item.prepcomplete ? "Yes" : "No" %>
+            </li>
+            <% }) %>
+                <br /> <br />
+                <a href="/menu/new">Add New Plan</a>
+    </ul>
+</body>
+
+</html>

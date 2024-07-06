@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Display</title>
+</head>
+<body>
+    <h2>Here's the plan for: <%=item.date.toISOString().substring(0, 10)%></h2>
+    <ul>
+        <li>Time of day: <%=item.timeOfDay%></li>
+        <li>Dish: <%=item.dish%></li>
+        <li>Preparation time: <%=item.prepTime%> minutes</li>
+        <li>Prepared and kept in the fridge: <%=item.prepcomplete ? "Yes" : "No"%></li>
+    </ul>
+    <br /><br />
+    <form action="/menu/<%=item._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%=item.dish%>?</button>
+    </form>
+</body>
+</html>
