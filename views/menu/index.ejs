@@ -12,8 +12,8 @@
     <ul>
         <% menu.forEach((item)=> { %>
             <p><a href="/menu/<%=item._id%>">Meal plan for:
-                <%=item.date%>
-                    </a>
+                    <%=item.date%>
+                </a>
             </p>
             <li>Completed: <%= item.prepcomplete ? "Yes" : "No" %>
             </li>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit A Meal</title>
+</head>
+
+<body>
+    <h3>Edit plan for <%=item.date.toISOString().substring(0, 10)%>
+    </h3>
+    <form action="/menu/<%=item._id%>?_method=PUT" method="POST">
+        <label>Plan for: </label>
+        <input type="date" name="date" id="date"
+            value="<%=item.date ? item.date.toISOString().substring(0, 10) : ""%>" />
+        <br />
+        <label>Dish name: </label>
+        <input type="text" name="dish" id="dish" placeholder="Enter new dish name" value="<%=item.dish%>" />
+        <br />
+        <label>When is this meal had? </label>
+        <input type="text" name="timeOfDay" id="timeOfDay" placeholder="Example: Afternoon"
+            value="<%=item.timeOfDay%>" />
+        <br />
+        <label>How long will this take to make?</label>
+        <input type="number" name="prepTime" id="prepTime" value="<%=item.prepTime%>" /> mins
+        <br />
+        <label>Are you done making this? </label>
+        <input type="checkbox" name="prepcomplete" id="prepcomplete" <%=item.prepcomplete && "checked" %>/>
+        <br /><br />
+        <button type="submit">Edit Plan</button>
+        <br /><br />
+        <a href="/menu">Go To Meal Plan</a>
+    </form>
+
+</body>
+
+</html>
